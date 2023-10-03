@@ -24,10 +24,6 @@ const memoReducer = (state, action) => {
                     description: action.payload.description,
                 },
             ];
-        // case "sort-memo":
-        //     return state.filter((memo)=> {
-            
-        //     });
         default:
             return state;
     }
@@ -53,9 +49,33 @@ const delMemo = dispatch => {
     return (id) => dispatch({ type: 'del-memo', payload: id });
 };
 const editMemo = dispatch =>{
-    return (id,day,money,title,description) => dispatch({
+    return (
+        id,
+        day,
+        timeS,
+        timeE,
+        subjectCode,
+        subjectM,
+        subject, 
+        room,
+        teacher, 
+        title, 
+        description, 
+        ) => dispatch({
         type:'edit-memo',
-        payload:{id,money,day,title,description}});
+        payload:{
+            id,
+            day,
+            timeS,
+            timeE,
+            subjectCode,
+            subjectM,
+            subject, 
+            room,
+            teacher, 
+            title, 
+            description, 
+        }});
 };
 
 export const { Context, Provider } = createDataContext(

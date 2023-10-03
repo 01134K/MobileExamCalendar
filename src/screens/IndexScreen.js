@@ -87,13 +87,9 @@ const IndexScreen = ({ navigation }) => {
                 }
             }
         }
-    // }
-    // DaySrot(state);
-    // state.sort()
-    // console.log(state[0].day)
-    // afSort.push(state[0].day);
-    console.log("afSort add = "+afSort)
-    console.log("<------------------------------------------------------->")
+   
+    // console.log("afSort add = "+afSort)
+    // console.log("<------------------------------------------------------->")
     const setDayColoer = (day) => {
         switch (day) {
             case day = "Mon": 
