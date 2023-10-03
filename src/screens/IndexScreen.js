@@ -18,13 +18,17 @@ const IndexScreen = ({ navigation }) => {
         // let afSort = [];
         // let countarr = 0;
         // setAfSort(afSort,[]);
-        console.log(afSort.length)
-        for(let i = 0; i < afSort.length; i ++){
+        // for(let i =0; i<=afSort.length; i++){
+        //     console.log("state "+i+" = "+afSort[i])
+        // }
+        // console.log("BFter re = "+afSort)
+        // console.log("afSort len = " + afSort.length)
+        for(let i = afSort.length - 1; i >= 0; i--){
             afSort.pop()
             // setAfSort[i].pop()
             // setAfSort(afSort.slice(afSort.indexOf(0, 1)))
         }
-        
+        console.log("AFter re = "+afSort)
         for(let i = 0; i < 7; i++){
             if(i == 0){
                 for(let cDay = 0; cDay < state.length; cDay++)
@@ -88,7 +92,8 @@ const IndexScreen = ({ navigation }) => {
     // state.sort()
     // console.log(state[0].day)
     // afSort.push(state[0].day);
-    console.log(afSort)
+    console.log("afSort add = "+afSort)
+    console.log("<------------------------------------------------------->")
     const setDayColoer = (day) => {
         switch (day) {
             case day = "Mon": 
