@@ -14,6 +14,7 @@ import { Context } from "../context/BlogContext";
 const IndexScreen = ({ navigation }) => {
     const { state, addMemo,delMemo } = useContext(Context);
     const [afSort, setAfSort] = useState([])
+    console.log(state)
     // const DaySrot= (state) =>{
         // let afSort = [];
         // let countarr = 0;
@@ -88,7 +89,7 @@ const IndexScreen = ({ navigation }) => {
             }
         }
    
-    // console.log("afSort add = "+afSort)
+    console.log("afSort add = "+afSort)
     // console.log("<------------------------------------------------------->")
     const setDayColoer = (day) => {
         switch (day) {

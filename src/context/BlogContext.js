@@ -86,7 +86,7 @@ export const { Context, Provider } = createDataContext(
         // {id: 1 ,day:'Wed Sep 27 2023 11:20:04',money:'-60',title:'food',description:'dinner at restaurant'},
         {   
             id: 0,
-            day:'WED',
+            day:'Wed',
             timeS:'15:00',
             timeE:'17:00',
             subjectCode:'01418344-60',

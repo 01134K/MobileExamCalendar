@@ -18,6 +18,7 @@ const ShowScreen = ({ route }) => {
                     <Text style={styles.title}>subject</Text>
                     <Text style={styles.content}>{memo.subjectCode + " Class " + memo.subjectM}</Text>
                     <Text style={styles.content}>{memo.subject}</Text>
+                    <Text style={styles.content}>{memo.teacher}</Text>
                 </View>
                 <View style={styles.textHo}>
                     <Text style={styles.title}>-Note-</Text>

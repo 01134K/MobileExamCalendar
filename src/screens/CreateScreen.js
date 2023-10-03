@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { View, Text, StyleSheet } from "react-native";
+import {StyleSheet } from "react-native";
 import MemoForm from "../components/MemoForm";
 import { Context } from "../context/BlogContext";
 
