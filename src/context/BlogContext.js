@@ -82,8 +82,6 @@ export const { Context, Provider } = createDataContext(
     memoReducer,
     { addMemo ,delMemo,editMemo},
     [
-        // {id: 0 ,day:'Wed Sep 27 2023 10:13:04',money:'+400',title:'income',description:'income from my mom'},
-        // {id: 1 ,day:'Wed Sep 27 2023 11:20:04',money:'-60',title:'food',description:'dinner at restaurant'},
         {   
             id: 0,
             day:'Wed',

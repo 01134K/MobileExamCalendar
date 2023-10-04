@@ -19,7 +19,6 @@ const IndexScreen = ({ navigation }) => {
         for(let i = afSort.length - 1; i >= 0; i--){
             afSort.pop()
         }
-        // console.log("AFter re = "+afSort)
         for(let i = 0; i < 7; i++){
             if(i == 0){
                 for(let cDay = 0; cDay < state.length; cDay++)
@@ -78,9 +77,6 @@ const IndexScreen = ({ navigation }) => {
                 }
             }
         }
-   
-    // console.log("afSort add = "+afSort)
-    // console.log("<------------------------------------------------------->")
     const setDayColoer = (day) => {
         switch (day) {
             case day = "Mon": 
@@ -94,14 +90,13 @@ const IndexScreen = ({ navigation }) => {
             case day = "Fri": 
                 return "#00bfff";
             case day = "Sat": 
-                return "#800080";
+                return "#CD43FA";
             case day = "Sun": 
                 return "#FF4C34";
             default:
                 return "#008000";
         }
     }
-{/* <>------------------------------------------------------------------------</> */}
     const confirmDelete = (id) => {
         return Alert.alert(
             "Delete?",
@@ -120,7 +115,6 @@ const IndexScreen = ({ navigation }) => {
             {cancelable:false}
         )
     } 
-{/* <>------------------------------------------------------------------------</> */}
     return (
         <View style={styles.container}>
             <TouchableOpacity
@@ -217,7 +211,6 @@ const IndexScreen = ({ navigation }) => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        // backgroundColor: "#0074CC",
         backgroundColor: "#148BFB",
     },
     row: {
@@ -235,14 +228,12 @@ const styles = StyleSheet.create({
 		marginVertical: 10,
 		marginHorizontal: 10,
         borderRadius:10,
-		// justifyContent: "space-between",
 	},
     titleXl:{
         fontSize: 25,
         margin : 5,
     },
     dayL:{
-        // backgroundColor:"red",
         width:"32%",
         paddingLeft:5,
         paddingTop:5,
@@ -255,7 +246,6 @@ const styles = StyleSheet.create({
     },
     Titem:{ 
         justifyContent:"center",
-        // width:"10%",
     },
     mainCard:{
         display:"flex",

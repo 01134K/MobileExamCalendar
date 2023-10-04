@@ -9,7 +9,6 @@ const ShowScreen = ({ route }) => {
     console.log(memo);
     return (
         <View style={styles.container}>
-            {/* <Text>[{route.params.id}]</Text> */}
             <View style={styles.card}>
                 <Text style={styles.title}>{memo.day}</Text>
                 <Text style={styles.title}>{memo.timeS+" - "+memo.timeE}</Text>

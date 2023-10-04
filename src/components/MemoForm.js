@@ -13,7 +13,6 @@ const dataDate = [
   ];
 
 const MemoForm = ({ onSubmit,initValues }) => {
-    // const [day, setday] = useState(initValues.day);
     const [day, setday] = useState(initValues.day);
     const [timeS, settimeS] = useState(initValues.timeS);
     const [timeE, settimeE] = useState(initValues.timeE);
@@ -25,12 +24,6 @@ const MemoForm = ({ onSubmit,initValues }) => {
     const [title, settitle] = useState(initValues.title);
     const [description, setdescription] = useState(initValues.description);
 
-
-
-    // const date = new Date().toString()
-    // const arrDay = date.split(" ");
-    // const today = arrDay[0]+" "+arrDay[1]+" "+arrDay[2]+" "+arrDay[3]+" "+arrDay[4]
-    // const today = date.getFullYear()+" "+date.getMonth()+" "+today.getDate()+" "date.gr
     return (
         <View style = {styles.container}>
             {/* <SafeAreaView> */}
@@ -53,9 +46,7 @@ const MemoForm = ({ onSubmit,initValues }) => {
                         onChange={item => {
                         setday(item.value);
                         }}
-                        // renderLeftIcon={() => (
-                        // // <AntDesign style={styles.icon} color="black" name="Safety" size={20} />
-                        // )}
+
                     />         
                     <Text style={styles.label}>time start:</Text>
                     <TextInput
@@ -144,15 +135,10 @@ const MemoForm = ({ onSubmit,initValues }) => {
                         >
                             Submit
                         </Text>
-                    {/* <Button
-                        title="Submit Memo"
-                        onPress={() => {
-                            onSubmit(day, money, title , description);
-                        }}
-                    /> */}
+
                     </TouchableOpacity>
                 </ScrollView>
-            {/* </SafeAreaView> */}
+
         </View>
     );
 };
@@ -170,7 +156,6 @@ MemoForm.defaultProps = {
         title:"", 
         description:"",
     },
-    // initValues:{title:"",content:""},
 }
 const styles = StyleSheet.create({
     container: {
