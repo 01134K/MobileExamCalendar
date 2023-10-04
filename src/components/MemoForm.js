@@ -3,13 +3,13 @@ import { View, Text, TextInput, StyleSheet, TouchableOpacity,ScrollView,SafeArea
 import { Dropdown } from 'react-native-element-dropdown';
 
 const dataDate = [
+    { label: 'Sunday', value: 'Sun' },
     { label: 'Monday', value: 'Mon' },
     { label: 'Tueday', value: 'Tue' },
     { label: 'Wedday', value: 'Wed' },
     { label: 'Thuday', value: 'Thu' },
     { label: 'Friday', value: 'Fri' },
     { label: 'Satday', value: 'Sat' },
-    { label: 'Sunday', value: 'Sun' },
   ];
 
 const MemoForm = ({ onSubmit,initValues }) => {
@@ -27,9 +27,9 @@ const MemoForm = ({ onSubmit,initValues }) => {
 
 
 
-    const date = new Date().toString()
-    const arrDay = date.split(" ");
-    const today = arrDay[0]+" "+arrDay[1]+" "+arrDay[2]+" "+arrDay[3]+" "+arrDay[4]
+    // const date = new Date().toString()
+    // const arrDay = date.split(" ");
+    // const today = arrDay[0]+" "+arrDay[1]+" "+arrDay[2]+" "+arrDay[3]+" "+arrDay[4]
     // const today = date.getFullYear()+" "+date.getMonth()+" "+today.getDate()+" "date.gr
     return (
         <View style = {styles.container}>
@@ -52,80 +52,59 @@ const MemoForm = ({ onSubmit,initValues }) => {
                         value={day}
                         onChange={item => {
                         setday(item.value);
-                        // {console.log(day)}
-                        // {console.log(item)}
-                        // {console.log(item.value)}
                         }}
                         // renderLeftIcon={() => (
                         // // <AntDesign style={styles.icon} color="black" name="Safety" size={20} />
                         // )}
                     />         
-                    {/* <Text style={styles.label}>DD/MM/YYYY:</Text>
-                    <TextInput
-                        style={styles.input}
-                        value={today}
-                        placeholder={today}
-                        editable={false} 
-                        selectTextOnFocus={false}
-                        // onChangeText={(text) => setday(text)}
-                    /> */}
-                    {/* <Text style={styles.label}>day</Text>
-                    <TextInput
-                        style={styles.input}
-                        value={day}
-                        // placeholder={today}
-                        editable={false} 
-                        selectTextOnFocus={false}
-                        onChangeText={(text) => setday(text)}
-                    /> */}
                     <Text style={styles.label}>time start:</Text>
                     <TextInput
                         style={styles.input}
                         value={timeS}
-                        placeholder="+400 or -50"
+                        placeholder="08:00"
                         onChangeText={(text) => settimeS(text)}
                     />
                     <Text style={styles.label}>time end:</Text>
                     <TextInput
                         style={styles.input}
                         value={timeE}
-                        placeholder="+400 or -50"
+                        placeholder="12:00"
                         onChangeText={(text) => settimeE(text)}
                     />
                     <Text style={styles.label}>subjectCode:</Text>
                     <TextInput
                         style={styles.input}
                         value={subjectCode}
-                        placeholder="+400 or -50"
+                        placeholder="01418344-60"
                         onChangeText={(text) => setsubjectCode(text)}
                     />
 
-                    <Text style={styles.label}>subjectM:</Text>
+                    <Text style={styles.label}>Class:</Text>
                     <TextInput
                         style={styles.input}
                         value={subjectM}
-                        placeholder="Food, incom"
+                        placeholder="700"
                         onChangeText={(text) => setsubjectM(text)}
                     />
                     <Text style={styles.label}>subject:</Text>
                     <TextInput
                         style={styles.input}
                         value={subject}
-                        placeholder="Food, incom"
+                        placeholder="Mobile Application Design and Development"
                         onChangeText={(text) => setsubject(text)}
                     />
                     <Text style={styles.label}>room:</Text>
                     <TextInput
                         style={styles.input}
                         value={room}
-                        placeholder="Food, incom"
+                        placeholder="SC9-330"
                         onChangeText={(text) => setroom(text)}
                     />
                     <Text style={styles.label}>teacher:</Text>
                     <TextInput
                         style={styles.input}
                         value={teacher}
-                        placeholder="Food, incom"
+                        placeholder="วรัทภพ ธภัทรสุวรรณ "
                         onChangeText={(text) => setteacher(text)}
                     />
                     <Text style={styles.label}>title:</Text>
@@ -180,10 +159,16 @@ const MemoForm = ({ onSubmit,initValues }) => {
 MemoForm.defaultProps = {
     initValues:{
         id:"",
-        day: "",
-        money: "",
-        title: "",
-        description: "",
+        day:"",
+        timeS:"",
+        timeE:"",
+        subjectCode:"",
+        subjectM:"",
+        subject:"", 
+        room:"",
+        teacher:"", 
+        title:"", 
+        description:"",
     },
     // initValues:{title:"",content:""},
 }
@@ -194,7 +179,7 @@ const styles = StyleSheet.create({
     },
     label: {
         fontSize: 20,
-        marginVertical: 10,
+        marginTop: 10,
         marginLeft: 10,
         fontWeight:'bold',
         color:"#fff",
@@ -231,11 +216,10 @@ const styles = StyleSheet.create({
         backgroundColor:'#fff',
         margin: 16,
         height: 50,
+        padding:5,
         borderBottomColor: 'gray',
         borderBottomWidth: 0.5,
-      },
-      icon: {
-        marginRight: 5,
+        borderRadius:5,
       },
       placeholderStyle: {
         fontSize: 16,

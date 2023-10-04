@@ -17,7 +17,7 @@ export default function App() {
             <NavigationContainer>
                 <Stack.Navigator
                     screenOptions={{
-                        headerTitle: "CASH BOOK 📝",
+                        headerTitle: "Calendar 📝",
                         headerStyle: { backgroundColor: "#004880" },
                         headerTintColor: "#fff",
                         

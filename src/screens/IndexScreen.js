@@ -14,17 +14,12 @@ import { Context } from "../context/BlogContext";
 const IndexScreen = ({ navigation }) => {
     const { state, addMemo,delMemo } = useContext(Context);
     const [afSort, setAfSort] = useState([])
-    // const DaySrot= (state) =>{
-        // let afSort = [];
-        // let countarr = 0;
-        // setAfSort(afSort,[]);
-        console.log(afSort.length)
-        for(let i = 0; i < afSort.length; i ++){
+    console.log(state)
+    
+        for(let i = afSort.length - 1; i >= 0; i--){
             afSort.pop()
-            // setAfSort[i].pop()
-            // setAfSort(afSort.slice(afSort.indexOf(0, 1)))
         }
-        
+        // console.log("AFter re = "+afSort)
         for(let i = 0; i < 7; i++){
             if(i == 0){
                 for(let cDay = 0; cDay < state.length; cDay++)
@@ -83,20 +78,17 @@ const IndexScreen = ({ navigation }) => {
                 }
             }
         }
-    // }
-    // DaySrot(state);
-    // state.sort()
-    // console.log(state[0].day)
-    // afSort.push(state[0].day);
-    console.log(afSort)
+   
+    // console.log("afSort add = "+afSort)
+    // console.log("<------------------------------------------------------->")
     const setDayColoer = (day) => {
         switch (day) {
             case day = "Mon": 
-                return "#ffff00";
+                return "#FFE301";
             case day = "Tue": 
-                return "#ffc0cb";
+                return "#FF7797";
             case day = "Wed": 
-                return "#008000";
+                return "#83FF71";
             case day = "Thu": 
                 return "#ffa500";
             case day = "Fri": 
@@ -104,7 +96,7 @@ const IndexScreen = ({ navigation }) => {
             case day = "Sat": 
                 return "#800080";
             case day = "Sun": 
-                return "#ff0000";
+                return "#FF4C34";
             default:
                 return "#008000";
         }
@@ -169,8 +161,8 @@ const IndexScreen = ({ navigation }) => {
                             onPress={() => navigation.navigate("Show", { id: item.id })}
                         >
                             <View style={styles.row}>
+
                                 <View 
-                                // style={styles.dayL}
                                 style={[
                                     styles.dayL,
                                     {backgroundColor: setDayColoer(item.day) }
@@ -188,11 +180,11 @@ const IndexScreen = ({ navigation }) => {
                                         {item.timeS} - {item.timeE}
                                     </Text>
                                 </View >
-                                <View 
+
+                                <View
                                     style={styles.mainCard}
                                 >
-                                    
-                                    <View style={styles.dayContext}>
+                                     <View style={styles.dayContext}>
                                     <Text
                                         >
                                             {item.subjectCode}           
@@ -210,7 +202,6 @@ const IndexScreen = ({ navigation }) => {
                                     <TouchableOpacity onPress={()=>confirmDelete(item.id)}
                                         style={styles.Titem}
                                     >
-                                    {/* <TouchableOpacity onPress={()=>delMemo(item.id)}> */}
                                         <Feather name="trash-2" size={24} color="black" />
                                     </TouchableOpacity>
                                 </View>
@@ -226,17 +217,18 @@ const IndexScreen = ({ navigation }) => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: "#0074CC",
+        // backgroundColor: "#0074CC",
+        backgroundColor: "#148BFB",
     },
     row: {
         flexDirection: "row",
-        // justifyContent: "space-between",
         paddingVertical: 0,
         paddingHorizontal:0,
     },
     title: {
         fontSize: 18,
         margin : 1,
+        fontWeight:"bold",
     },
     item: {
 		backgroundColor: "#ffff",
@@ -249,14 +241,9 @@ const styles = StyleSheet.create({
         fontSize: 25,
         margin : 5,
     },
-    // textP:{
-    //     display:"flex",
-    //     // flex-direction: row | row-reverse | column | column-reverse;
-
-    // },
     dayL:{
         // backgroundColor:"red",
-        width:"30%",
+        width:"32%",
         paddingLeft:5,
         paddingTop:5,
         borderTopLeftRadius:10,
@@ -264,15 +251,16 @@ const styles = StyleSheet.create({
     },
     dayContext:{
         padding:5,
-        // justifyContent: "space-between",
+        width:"60%",
     },
-    Titem:{
+    Titem:{ 
         justifyContent:"center",
-        // justifyContent: "space-between",
-        // alignItems:"flex-end"
+        // width:"10%",
     },
     mainCard:{
+        display:"flex",
         flexDirection: "row",
+        justifyContent: "space-between",
     }
 });
 

@@ -12,18 +12,21 @@ const ShowScreen = ({ route }) => {
             {/* <Text>[{route.params.id}]</Text> */}
             <View style={styles.card}>
                 <Text style={styles.title}>{memo.day}</Text>
+                <Text style={styles.title}>{memo.timeS+" - "+memo.timeE}</Text>
+                <Text style={styles.title}>{"Room : "+memo.room}</Text>
                 <View style={styles.textHo}>
-                    <Text style={styles.title}>Your money</Text>
-                    <Text style={styles.content}>{memo.money}</Text>
+                    <Text style={styles.title}>subject</Text>
+                    <Text style={styles.content}>{memo.subjectCode + " Class " + memo.subjectM}</Text>
+                    <Text style={styles.content}>{memo.subject}</Text>
+                    <Text style={styles.content}>{memo.teacher}</Text>
                 </View>
                 <View style={styles.textHo}>
+                    <Text style={styles.title}>-Note-</Text>
                     <Text style={styles.title}>Title</Text>
                     <Text style={styles.content}>{memo.title}</Text>
-                </View>
-                <View style={styles.textHo}>
                     <Text style={styles.title}>Description</Text>
                     <Text style={styles.content}>{memo.description}</Text>
-                </View> 
+                </View>
             </View>
         </View>
     );
