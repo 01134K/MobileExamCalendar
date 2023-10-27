@@ -9,6 +9,7 @@ import {
 } from "react-native";
 import { Feather ,MaterialCommunityIcons} from "@expo/vector-icons";
 import { Context } from "../context/BlogContext";
+import { Ionicons } from '@expo/vector-icons';
 
 
 const IndexScreen = ({ navigation }) => {
@@ -140,7 +141,7 @@ const IndexScreen = ({ navigation }) => {
                             style={styles.titleXl}
                         >
                             {
-                                <MaterialCommunityIcons name="face-man" size={40} color="black" />        
+                                <Ionicons name="create-outline" size={40} color="black" />        
                             }
                             Create
                         </Text>
